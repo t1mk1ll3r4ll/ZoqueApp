@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ZoqueApp</string>
+    <string name="title_activity_splash_screen">splashScreen</string>
+    <string name="PlaceHolder">placeholder</string>
+</resources>

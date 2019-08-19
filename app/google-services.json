@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "636926909716",
+    "firebase_url": "https://zoqueapp-ed641.firebaseio.com",
+    "project_id": "zoqueapp-ed641",
+    "storage_bucket": "zoqueapp-ed641.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636926909716:android:6d38e9835766e616",
+        "android_client_info": {
+          "package_name": "com.UO.zoqueApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "636926909716-pf8na2rc461i0ve65ha5hgvocube4v3n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.UO.zoqueApp",
+            "certificate_hash": "c7e451765392acc06e93a5e8574d723a704c21c0"
+          }
+        },
+        {
+          "client_id": "636926909716-s1hufph4eas3h27coch4u20g14or0uqe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLkuYO9-bOZBWU-42Ez0UtDyh4GSBJ7BY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "636926909716-s1hufph4eas3h27coch4u20g14or0uqe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
