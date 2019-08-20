@@ -2,4 +2,14 @@
     <string name="app_name">ZoqueApp</string>
     <string name="title_activity_splash_screen">splashScreen</string>
     <string name="PlaceHolder">placeholder</string>
+    <string name="iniciarSesion">Iniciar sesión</string>
+    <string name="emailHint">Email</string>
+    <string name="contrasenaHint">Contraseña</string>
+    <string name="contrasenaOlvidada">¿Olvidaste tu contraseña?</string>
+    <string name="recuperarContraseña">¡Recupérala!</string>
+    <string name="inicioDeSesion">Inicio de sesión</string>
+    <string name="crearCuenta">¿Aun no tienes cuenta?</string>
+    <string name="CrearCuentaBoton">¡Crea una!</string>
+    <string name="contentDescription2">boton para ocultar la contraseña</string>
+    <string name="contentDescription1">boton para ver la contraseña</string>
 </resources>
