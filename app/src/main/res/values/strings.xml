@@ -12,4 +12,12 @@
     <string name="CrearCuentaBoton">¡Crea una!</string>
     <string name="contentDescription2">boton para ocultar la contraseña</string>
     <string name="contentDescription1">boton para ver la contraseña</string>
+    <string name="courseTitle">titulo del curso</string>
+    <string name="contentDescriptionCardView">imagen del curso a ver</string>
+    <string name="headerImage">header</string>
+    <string name="courseTitleExplain">Titulo del curso</string>
+    <string name="courseExplainExplain">Descripcion</string>
+    <string name="categoriaCourseExplain">Categoria</string>
+    <string name="goTo">Ir al curso</string>
+    <string name="space" />
 </resources>
