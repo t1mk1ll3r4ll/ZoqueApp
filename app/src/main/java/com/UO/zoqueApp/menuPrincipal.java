@@ -1,64 +1,62 @@
 package com.UO.zoqueApp;
 
+import android.os.Build;
 import android.support.annotation.NonNull;
-import android.support.design.widget.CoordinatorLayout;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.MotionEvent;
+
+
+
+import com.github.clans.fab.FloatingActionMenu;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class menuPrincipal extends AppCompatActivity {
-    private FloatingActionButton fab;
 
     List<Course> lstCourse;
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
 
-        fab = this.findViewById(R.id.fab);
+        final FloatingActionMenu floatingMenu = findViewById(R.id.fab);
         RecyclerView rv = findViewById(R.id.recyclerView);
         lstCourse = new ArrayList<>();
-        reciclerViewAdapter myAdapter = new reciclerViewAdapter(this,lstCourse);
+        reciclerViewAdapter myAdapter = new reciclerViewAdapter(this, lstCourse);
 
 
-        lstCourse.add(new Course("finanzas","categoria: Monedas", "descricion: curso sobre manejo de finanzas",R.drawable.cursouno));
-        lstCourse.add(new Course("networking","categoria: relaciones", "descricion: curso sobre relaciones para el exito",R.drawable.cursodos));
-        lstCourse.add(new Course("trabajo en equipo","categoria: relaciones personales", "descricion: como trabajar en equipo",R.drawable.cursotres));
-        lstCourse.add(new Course("networking computadoras","categoria: topologia de red", "descricion: curso sobre topologias",R.drawable.cursocuatro));
-        lstCourse.add(new Course("training","categoria: entrenamiento personal", "descricion: curso sobre la salud",R.drawable.cursocinco));
-        lstCourse.add(new Course("traduccion","categoria: lenguas", "descricion: curso sobre traduccion dah!",R.drawable.cursoseis));
-        lstCourse.add(new Course("conversacion","categoria: lenguas", "descricion: curso sobre conversaciones en otro idioma dah!",R.drawable.cursosiete));
-        lstCourse.add(new Course("aprende a programar!","categoria: IT", "descricion: curso basico de programacion",R.drawable.cursoocho));
+        lstCourse.add(new Course("finanzas", "categoria: Monedas", "descricion: curso sobre manejo de finanzas", R.drawable.cursouno));
+        lstCourse.add(new Course("networking", "categoria: relaciones", "descricion: curso sobre relaciones para el exito", R.drawable.cursodos));
+        lstCourse.add(new Course("trabajo en equipo", "categoria: relaciones personales", "descricion: como trabajar en equipo", R.drawable.cursotres));
+        lstCourse.add(new Course("networking computadoras", "categoria: topologia de red", "descricion: curso sobre topologias", R.drawable.cursocuatro));
+        lstCourse.add(new Course("training", "categoria: entrenamiento personal", "descricion: curso sobre la salud", R.drawable.cursocinco));
+        lstCourse.add(new Course("traduccion", "categoria: lenguas", "descricion: curso sobre traduccion dah!", R.drawable.cursoseis));
+        lstCourse.add(new Course("conversacion", "categoria: lenguas", "descricion: curso sobre conversaciones en otro idioma dah!", R.drawable.cursosiete));
+        lstCourse.add(new Course("aprende a programar!", "categoria: IT", "descricion: curso basico de programacion", R.drawable.cursoocho));
 
 
-        rv.setLayoutManager(new GridLayoutManager(this,2));
+        rv.setLayoutManager(new GridLayoutManager(this, 2));
         rv.setAdapter(myAdapter);
-
-
-
 
         rv.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-            }
-
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
 
                 if (dy < 0) {
-                    fab.show();
+                    floatingMenu.showMenuButton(true);
                 } else if (dy > 0) {
-                    fab.hide();
+                    floatingMenu.hideMenuButton(true);
                 }
             }
         });
     }
-
 }
