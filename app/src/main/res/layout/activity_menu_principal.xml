@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="@id/imageHeader"
         app:layout_constraintTop_toBottomOf="@+id/imageHeader">
 
-    </android.support.v7.widget.RecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
 
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/fab"
@@ -36,21 +36,37 @@
         android:layout_height="569dp"
         android:layout_gravity="end|end"
         android:layout_margin="@dimen/_16sdp"
-        android:backgroundTint="#2d2d2d"
+        android:backgroundTint="#0F28CF"
         android:src="@drawable/menu"
-        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/recyclerView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="1.0"
+        app:menu_colorNormal="#0F28CF"
+        app:menu_colorPressed="#00FFF7"
+        app:menu_colorRipple="#00FFAD"
+        >
 
         <com.github.clans.fab.FloatingActionButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/settings"
-            app:fab_label="opciones" />
+            app:fab_label="opciones"
+            android:onClick="opciones"/>
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/store"
+            app:fab_label="Tienda"
+            android:onClick="tienda"/>
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/marathon"
+            app:fab_label="Maraton"
+            android:onClick="maraton"/>
     </com.github.clans.fab.FloatingActionMenu>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

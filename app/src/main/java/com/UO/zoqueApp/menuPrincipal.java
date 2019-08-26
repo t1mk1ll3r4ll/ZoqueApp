@@ -1,14 +1,14 @@
 package com.UO.zoqueApp;
 
+import android.content.Intent;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
 
 
 import com.github.clans.fab.FloatingActionMenu;
@@ -58,5 +58,18 @@ public class menuPrincipal extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void maraton(View view){
+        Intent intent = new Intent(this,maraton.class);
+        startActivity(intent);
+    }
+    public void opciones(View view){
+        Intent intent = new Intent(this,opcionesUsuario.class);
+        startActivity(intent);
+    }
+    public void tienda(View view){
+        Intent intent = new Intent(this,tienda.class);
+        startActivity(intent);
     }
 }
