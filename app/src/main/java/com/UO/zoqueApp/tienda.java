@@ -31,12 +31,12 @@ public class tienda extends AppCompatActivity {
         lstCourse = new ArrayList<>();
         RecyclerView rv = findViewById(R.id.recyclerViewStores);
 
-        lstCourse.add(new Course("finanzas", "categoria: Monedas", "descricion: curso sobre manejo de finanzas", R.drawable.clothesone , 30));
-        lstCourse.add(new Course("networking", "categoria: relaciones", "descricion: curso sobre relaciones para el exito", R.drawable.clothestwo, 50));
-        lstCourse.add(new Course("trabajo en equipo", "categoria: relaciones personales", "descricion: como trabajar en equipo", R.drawable.clothesthree, 100));
+        lstCourse.add(new Course("finanzas", "categoria: Monedas", "descricion: curso sobre manejo de finanzas", R.drawable.clothesone , "30"));
+        lstCourse.add(new Course("networking", "categoria: relaciones", "descricion: curso sobre relaciones para el exito", R.drawable.clothestwo, "50"));
+        lstCourse.add(new Course("trabajo en equipo", "categoria: relaciones personales", "descricion: como trabajar en equipo", R.drawable.clothesthree, "100"));
 
-        recyclerViewAdapterStore myAdapter = new recyclerViewAdapterStore(getApplicationContext(), lstCourse);
-        rv.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
+        recyclerViewAdapterStore myAdapter = new recyclerViewAdapterStore(tienda.this, lstCourse);
+        rv.setLayoutManager(new GridLayoutManager(tienda.this, 2));
         rv.setAdapter(myAdapter);
 
 

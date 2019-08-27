@@ -9,8 +9,8 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:padding="@dimen/_10sdp">
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -57,7 +57,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/reward"
+                android:id="@+id/cost"
                 android:text="@string/Reward"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:textSize="@dimen/_18sdp"
@@ -65,6 +65,7 @@
                 android:textColor="#2d2d2d"
                 />
             <Button
+                android:id="@+id/botonIrACurso"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/goTo"

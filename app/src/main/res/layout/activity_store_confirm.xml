@@ -57,7 +57,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/reward"
+                android:id="@+id/cost"
                 android:text="@string/Reward"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:textSize="@dimen/_18sdp"

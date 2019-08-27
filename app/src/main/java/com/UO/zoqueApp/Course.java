@@ -4,19 +4,19 @@ public class Course {
     private String titulo;
     private String Categoria;
     private String Descripcion;
-    private int elote;
+    private String elote;
     private int foto;
 
 
     public Course() {
     }
 
-    public Course(String titulo, String categoria, String descripcion, int foto, int elote) {
+    public Course(String titulo, String categoria, String descripcion, int foto, String elote) {
         this.titulo = titulo;
         Categoria = categoria;
         Descripcion = descripcion;
         this.foto = foto;
-        this.elote=elote;
+        this.elote = elote;
 
     }
 
@@ -32,11 +32,9 @@ public class Course {
         return Descripcion;
     }
 
-    public int getFoto() {
-        return foto;
-    }
+    public int getFoto() { return foto; }
 
-    public int getReward(){ return elote; }
+    public String getReward(){ return elote; }
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
@@ -54,7 +52,7 @@ public class Course {
         this.foto = foto;
     }
 
-    public void setReward(int elote){this.elote = elote; }
+    public void setReward(String elote){this.elote = elote; }
 }
 
 

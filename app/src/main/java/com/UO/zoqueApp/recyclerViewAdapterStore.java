@@ -31,14 +31,14 @@ public class recyclerViewAdapterStore extends RecyclerView.Adapter<recyclerViewA
         view = mInflater.inflate(R.layout.cardviewstore,viewGroup,false);
         return new myrecyclerviewHolder(view);
     }
-    @Override
+
     public void onBindViewHolder(@NonNull myrecyclerviewHolder myViewHolder, final int i) {
         myViewHolder.tvTitulo.setText(mData.get(i).getTitulo());
         myViewHolder.ivImagen.setImageResource(mData.get(i).getFoto());
         myViewHolder.cardview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(mContext,cursoDescripcion.class);
+                Intent intent = new Intent(mContext,storeConfirm.class);
                 intent.putExtra("titulo",mData.get(i).getTitulo());
                 intent.putExtra("categoria",mData.get(i).getCategoria());
                 intent.putExtra("descripcion",mData.get(i).getDescripcion());
@@ -58,6 +58,7 @@ public class recyclerViewAdapterStore extends RecyclerView.Adapter<recyclerViewA
         TextView tvTitulo;
         ImageView ivImagen;
         CardView cardview;
+
 
         public myrecyclerviewHolder(View itemView){
             super(itemView);
