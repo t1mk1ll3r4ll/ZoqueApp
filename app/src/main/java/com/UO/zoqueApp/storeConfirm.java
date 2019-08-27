@@ -3,11 +3,11 @@ package com.UO.zoqueApp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class maraton extends AppCompatActivity {
+public class storeConfirm extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maraton);
+        setContentView(R.layout.activity_store_confirm);
     }
 }

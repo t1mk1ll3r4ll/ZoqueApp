@@ -13,29 +13,26 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class reciclerViewAdapter extends RecyclerView.Adapter<reciclerViewAdapter.myViewHolder> {
-
+public class recyclerViewAdapterStore extends RecyclerView.Adapter<recyclerViewAdapterStore.myrecyclerviewHolder> {
     private Context mContext;
     private List<Course> mData;
 
-
-    public reciclerViewAdapter(Context mContext, List<Course> mData) {
+    public recyclerViewAdapterStore(Context mContext, List<Course> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
 
     @NonNull
     @Override
-    public myViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public myrecyclerviewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
         View view;
         LayoutInflater mInflater = LayoutInflater.from(mContext);
-        view=mInflater.inflate(R.layout.cardview_item_course,viewGroup,false);
-        return new myViewHolder(view);
+        view = mInflater.inflate(R.layout.cardviewstore,viewGroup,false);
+        return new myrecyclerviewHolder(view);
     }
-
     @Override
-    public void onBindViewHolder(@NonNull myViewHolder myViewHolder, final int i) {
+    public void onBindViewHolder(@NonNull myrecyclerviewHolder myViewHolder, final int i) {
         myViewHolder.tvTitulo.setText(mData.get(i).getTitulo());
         myViewHolder.ivImagen.setImageResource(mData.get(i).getFoto());
         myViewHolder.cardview.setOnClickListener(new View.OnClickListener() {
@@ -52,22 +49,21 @@ public class reciclerViewAdapter extends RecyclerView.Adapter<reciclerViewAdapte
         });
 
     }
-
-    @Override
     public int getItemCount() {
         return mData.size();
     }
 
-    public static class myViewHolder extends RecyclerView.ViewHolder{
+    public static class myrecyclerviewHolder extends RecyclerView.ViewHolder{
 
         TextView tvTitulo;
         ImageView ivImagen;
         CardView cardview;
-        public myViewHolder(View itemView){
+
+        public myrecyclerviewHolder(View itemView){
             super(itemView);
-            tvTitulo = itemView.findViewById(R.id.textViewCardView);
-            ivImagen = itemView.findViewById(R.id.imagenCardView);
-            cardview = itemView.findViewById(R.id.cardViewManager);
+            tvTitulo = itemView.findViewById(R.id.textViewCardViewstore);
+            ivImagen = itemView.findViewById(R.id.imagenCardViewstore);
+            cardview = itemView.findViewById(R.id.cardViewManagerstore);
         }
     }
 }

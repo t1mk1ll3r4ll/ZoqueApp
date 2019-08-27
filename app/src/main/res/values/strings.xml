@@ -20,4 +20,6 @@
     <string name="categoriaCourseExplain">Categoria</string>
     <string name="goTo">Ir al curso</string>
     <string name="space" />
+    <string name="Reward">Rewards</string>
+    <string name="buyNow">confirmar compra</string>
 </resources>

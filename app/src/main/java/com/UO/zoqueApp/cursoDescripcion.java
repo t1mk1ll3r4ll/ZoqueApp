@@ -2,15 +2,16 @@ package com.UO.zoqueApp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 
 public class cursoDescripcion extends AppCompatActivity {
-    private TextView tvtitle, tvDescription, tvCategory;
+    private TextView tvtitle, tvDescription, tvCategory,tvreward;
     private ImageView img;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +21,7 @@ public class cursoDescripcion extends AppCompatActivity {
         tvDescription=findViewById(R.id.DescripcionCurso);
         tvCategory=findViewById(R.id.categoriaCurso);
         img = findViewById(R.id.courseFoto);
+        tvreward = findViewById(R.id.reward);
 
 
 
@@ -31,11 +33,13 @@ public class cursoDescripcion extends AppCompatActivity {
         categoria= intent.getExtras().getString("categoria");
         descripcion= intent.getExtras().getString("descripcion");
         int image = intent.getExtras().getInt("foto");
+        String reward = intent.getExtras().getString("reward");
 
         tvtitle.setText(titulo);
         tvCategory.setText(categoria);
         tvDescription.setText(descripcion);
         img.setImageResource(image);
+        tvreward.setText(reward);
 
     }
 }
