@@ -44,10 +44,9 @@
         app:layout_constraintStart_toEndOf="@+id/recyclerView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:menu_colorNormal="#0F28CF"
-        app:menu_colorPressed="#00FFF7"
-        app:menu_colorRipple="#00FFAD"
-        >
+        app:menu_colorNormal="#0540f2"
+        app:menu_colorPressed="#051A59"
+        app:menu_colorRipple="#051A59">
 
         <com.github.clans.fab.FloatingActionButton
             android:layout_width="match_parent"
@@ -55,35 +54,21 @@
             android:src="@drawable/settings"
             app:fab_label="opciones"
             android:onClick="opciones"
-            app:fab_colorNormal="#0F28CF"/>
+            app:fab_colorNormal="#0540f2"/>
         <com.github.clans.fab.FloatingActionButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/store"
             app:fab_label="Tienda"
             android:onClick="tienda"
-            app:backgroundTint="#0F28CF"/>
+            app:fab_colorNormal="#0540f2"/>
         <com.github.clans.fab.FloatingActionButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/marathon"
             app:fab_label="Maraton"
             android:onClick="maraton"
-            app:backgroundTint="#0F28CF"/>
-        <com.github.clans.fab.FloatingActionButton
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/marathon"
-            app:fab_label="Prueba"
-            android:onClick="prueba"
-            app:backgroundTint="#0F28CF"/>
-        <com.github.clans.fab.FloatingActionButton
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/marathon"
-            app:fab_label="añadir coins"
-            android:onClick="coinAdd"
-            app:backgroundTint="#0F28CF"/>
+            app:fab_colorNormal="#0540f2"/>
     </com.github.clans.fab.FloatingActionMenu>
 
 </android.support.constraint.ConstraintLayout>
