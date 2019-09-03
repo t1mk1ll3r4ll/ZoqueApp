@@ -13,11 +13,19 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.ProviderQueryResult;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class inicioSesion extends AppCompatActivity {
     EditText tvEmail;
@@ -79,6 +87,7 @@ public class inicioSesion extends AppCompatActivity {
             public void onClick(View v) {
                 barra.setVisibility(View.VISIBLE);
                 iniciar.setVisibility(View.INVISIBLE);
+
                 ingresar();
             }
         });
@@ -96,6 +105,8 @@ public class inicioSesion extends AppCompatActivity {
                 finish();
             }
         });
+
+
     }
     public void recuperarcontra() {
         try {
@@ -131,6 +142,34 @@ public class inicioSesion extends AppCompatActivity {
             mAuth.signInWithEmailAndPassword(email, contra).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
+
+                    if(!task.isSuccessful()){
+                        try
+                        {
+                            throw task.getException();
+                        }
+                        // if user enters wrong email.
+                        catch (FirebaseAuthInvalidUserException invalidEmail)
+                        {
+                            iniciar.setVisibility(View.VISIBLE);
+                            barra.setVisibility(View.INVISIBLE);
+                            tvEmail.setError("Correo Incorrecto");
+
+                            // TODO: take your actions!
+                        }
+                        // if user enters wrong password.
+                        catch (FirebaseAuthInvalidCredentialsException wrongPassword)
+                        {
+                            iniciar.setVisibility(View.VISIBLE);
+                            barra.setVisibility(View.INVISIBLE);
+                            tvContra.setError("Contraseña Incorrecta");
+                            // TODO: Take your action
+                        }
+                        catch (Exception e)
+                        {
+                            Toast.makeText(inicioSesion.this, "ha ocurrido un error, lo sentimos :(", Toast.LENGTH_SHORT).show();
+                        }
+                    }
                     if (task.isSuccessful()) {
                         if(mAuth.getCurrentUser().isEmailVerified()) {
                             barra.setVisibility(View.INVISIBLE);
@@ -144,25 +183,6 @@ public class inicioSesion extends AppCompatActivity {
                             finish();
 
                         }
-                    } else {
-                        mAuth.fetchProvidersForEmail(tvEmail.getText().toString()).addOnCompleteListener(new OnCompleteListener<ProviderQueryResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<ProviderQueryResult> task) {
-                                if(task.isSuccessful()) {
-                                    iniciar.setVisibility(View.VISIBLE);
-                                    barra.setVisibility(View.INVISIBLE);
-                                    tvContra.setError("Contaseña incorrecta");
-
-                                }
-                                else {
-                                    iniciar.setVisibility(View.VISIBLE);
-                                    barra.setVisibility(View.INVISIBLE);
-                                    tvContra.setError("Contraseña incorrecta");
-                                    tvEmail.setError("Correo Incorrecto");
-                                }
-                            }
-
-                        });
                     }
                 }
             });
@@ -179,6 +199,28 @@ public class inicioSesion extends AppCompatActivity {
             iniciar.setVisibility(View.VISIBLE);
             barra.setVisibility(View.INVISIBLE);
         }
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseAuth fba = FirebaseAuth.getInstance();
+
+        int empty=0;
+        Map<String, Object> coins = new HashMap<>();
+
+        coins.put("coin Ammount", empty);
+        coins.put("timestamp", FieldValue.serverTimestamp());
+
+        db.collection("coins").document(fba.getCurrentUser().getUid()).set(coins, SetOptions.merge()).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getApplicationContext(), "failure", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
     protected void onStart() {
         super.onStart();

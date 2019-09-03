@@ -1,19 +1,26 @@
 package com.UO.zoqueApp;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,6 +29,7 @@ import java.util.Map;
 
 public class tienda extends AppCompatActivity {
     int coinValue=0;
+    TextView tvElotitos;
     List<Course> lstCourse;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,29 +48,29 @@ public class tienda extends AppCompatActivity {
         rv.setAdapter(myAdapter);
 
 
-    }
-    public void CoinsAdd(View view){
 
         FirebaseAuth fba= FirebaseAuth.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        Map<String, Object> coins = new HashMap<>();
-
-        coins.put("coin Ammount", coinValue);
-        coins.put("timestamp", FieldValue.serverTimestamp());
-
-        db.collection("coins").document(fba.getCurrentUser().getUid()).set(coins).addOnCompleteListener(new OnCompleteListener<Void>() {
+        tvElotitos= findViewById(R.id.textviewelotitos);
+        final String TAG="lul?";
+        final DocumentReference docRef = db.collection("coins").document(fba.getCurrentUser().getUid());
+        docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
+            public void onEvent(@Nullable DocumentSnapshot snapshot,
+                                @Nullable FirebaseFirestoreException e) {
+                if (e != null) {
+                    Log.w(TAG, "Listen failed.", e);
+                    return;
+                }
 
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getApplicationContext(), "failure", Toast.LENGTH_SHORT).show();
+                if (snapshot != null && snapshot.exists()) {
+                    tvElotitos.setText("cantidad de elotitos: " + snapshot.get("coin Ammount"));
+                } else {
+                    Log.d(TAG, "Current data: null");
+                }
             }
         });
 
-
     }
+
 }

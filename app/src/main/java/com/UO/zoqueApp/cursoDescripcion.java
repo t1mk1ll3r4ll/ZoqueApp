@@ -14,9 +14,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,6 +26,8 @@ import java.util.Map;
 public class cursoDescripcion extends AppCompatActivity {
     private TextView tvtitle, tvDescription, tvCategory,tvreward;
     private ImageView img;
+    FirebaseAuth fba= FirebaseAuth.getInstance();
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,26 +64,27 @@ public class cursoDescripcion extends AppCompatActivity {
         btnCurso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int coinValue=Integer.parseInt(reward);
-                FirebaseAuth fba= FirebaseAuth.getInstance();
-                    FirebaseFirestore db = FirebaseFirestore.getInstance();
-                    Map<String, Object> coins = new HashMap<>();
 
-                    coins.put("coin Ammount", coinValue);
-                    coins.put("timestamp", FieldValue.serverTimestamp());
+                DocumentReference dbU =db.collection("coins").document(fba.getCurrentUser().getUid());
+                dbU.update("coin Ammount", FieldValue.increment(Integer.parseInt(reward)));
 
-                    db.collection("coins").document(fba.getCurrentUser().getUid()).set(coins).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
 
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(getApplicationContext(), "failure", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+//                Map<String, Object> coins = new HashMap<>();
+//
+//                    //coins.put("coin Ammount", FieldValue.increment(+coinValue));
+//                    coins.put("timestamp", FieldValue.serverTimestamp());
+//
+//                    db.collection("coins").document(fba.getCurrentUser().getUid()).set(coins).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                        @Override
+//                        public void onComplete(@NonNull Task<Void> task) {
+//                            Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
+//                             }
+//                    }).addOnFailureListener(new OnFailureListener() {
+//                        @Override
+//                        public void onFailure(@NonNull Exception e) {
+//                            Toast.makeText(getApplicationContext(), "failure", Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
             }
         });
 

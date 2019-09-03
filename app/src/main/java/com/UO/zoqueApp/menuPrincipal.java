@@ -2,19 +2,40 @@ package com.UO.zoqueApp;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
+
 import com.github.clans.fab.FloatingActionMenu;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.SetOptions;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class menuPrincipal extends AppCompatActivity {
 
     List<Course> lstCourse;
+    int coins;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +68,9 @@ public class menuPrincipal extends AppCompatActivity {
                 } else if (dy > 0) {
                     floatingMenu.hideMenuButton(true);
                 }
+                else if(dy==0){
+                    floatingMenu.showMenuButton(true);
+                }
             }
         });
     }
@@ -63,4 +87,5 @@ public class menuPrincipal extends AppCompatActivity {
         Intent intent = new Intent(this,tienda.class);
         startActivity(intent);
     }
+
 }
