@@ -5,191 +5,76 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".inicioSesion"
-    tools:targetApi="16"
-    >
+    tools:targetApi="16">
 
 
     <Button
         android:id="@+id/IniciarFormBut"
         android:layout_width="202dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="200dp"
-        android:text="@string/iniciarSesion"
+        android:layout_height="48dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginEnd="105dp"
+        android:background="@drawable/botonlogininicio"
         android:textAllCaps="false"
         android:textColor="#ffffff"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contra"
-        />
-
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:id="@+id/correo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginBottom="33dp"
-        android:ems="10"
-        android:fontFamily="@font/gothammedium"
-        android:hint="@string/emailHint"
-        android:inputType="textWebEmailAddress"
-        android:textColor="#0540f2"
-        app:layout_constraintBottom_toTopOf="@+id/contra"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:met_floatingLabel="highlight"
-        app:met_floatingLabelTextColor="#FFFFFF"
-        app:met_floatingLabelTextSize="15sp"
-        app:met_primaryColor="#FFFFFF" />
-
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:id="@+id/contra"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginBottom="41dp"
-        android:ems="10"
-        android:fontFamily="@font/gothammedium"
-        android:hint="@string/contrasenaHint"
-        android:inputType="textPassword"
-        android:textColor="#0540f2"
-        app:layout_constraintBottom_toTopOf="@+id/IniciarFormBut"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/correo"
-        app:met_floatingLabel="highlight"
-        app:met_floatingLabelTextColor="#03dac6"
-        app:met_floatingLabelTextSize="15sp"
-        app:met_primaryColor="#3cb296"
-        app:passwordToggleEnabled="true" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/contrasenaOlvidada"
-        android:textColor="#2d2d2d"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/reccon"
-        app:layout_constraintHorizontal_bias="0.75"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.846" />
+        app:layout_constraintTop_toTopOf="@+id/guideline9" />
 
     <Button
         android:id="@+id/reccon"
-        android:layout_width="109dp"
+        android:layout_width="102dp"
         android:layout_height="27dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/recuperarContraseña"
+        android:background="@drawable/botonrecuperarinicio"
         android:textAllCaps="false"
         android:textColor="#ffffff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.846" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="47dp"
-        android:fontFamily="@font/gothamlight"
-        android:text="@string/inicioDeSesion"
-        android:textColor="#2d2d2d"
-        android:textSize="@dimen/_32sdp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/correo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/crearCuenta"
-        android:textColor="#2d2d2d"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/creaCuentaInicioSesion"
-        app:layout_constraintHorizontal_bias="0.806"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.926" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintEnd_toEndOf="@+id/imageView8"
+        app:layout_constraintStart_toStartOf="@+id/imageView8"
+        app:layout_constraintTop_toTopOf="@+id/guideline11" />
 
     <Button
         android:id="@+id/creaCuentaInicioSesion"
-        android:layout_width="109dp"
+        android:layout_width="88dp"
         android:layout_height="27dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/CrearCuentaBoton"
+        android:background="@drawable/botonsignupinicio"
         android:textAllCaps="false"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.928" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
-    <ProgressBar
-        android:id="@+id/progressBar3"
-        style="?android:attr/progressBarStyle"
+    <ImageView
+        android:id="@+id/imageView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:indeterminate="true"
-        android:indeterminateTint="#0240f2"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contra" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logodreagadoinicio" />
+
+    <ImageView
+        android:id="@+id/HidePassIS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:contentDescription="@string/contentDescription2"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/ViewPassIS"
+        app:layout_constraintEnd_toEndOf="@+id/ViewPassIS"
+        app:layout_constraintStart_toStartOf="@+id/ViewPassIS"
+        app:layout_constraintTop_toTopOf="@+id/ViewPassIS"
+        app:srcCompat="@drawable/novisibility" />
 
     <ImageView
         android:id="@+id/ViewPassIS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="29dp"
         android:clickable="true"
         android:contentDescription="@string/contentDescription1"
         android:focusable="true"
@@ -200,22 +85,109 @@
         app:srcCompat="@drawable/visibility" />
 
     <ImageView
-        android:id="@+id/HidePassIS"
+        android:id="@+id/imageView8"
+        android:layout_width="244dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline10"
+        app:srcCompat="@drawable/textinicio" />
+
+    <ProgressBar
+        android:id="@+id/progressBar3"
+        style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginBottom="30dp"
-        android:clickable="true"
-        android:contentDescription="@string/contentDescription2"
-        android:focusable="true"
-        app:layout_constraintBottom_toBottomOf="@+id/contra"
+        android:layout_marginStart="181dp"
+        android:layout_marginEnd="182dp"
+        android:indeterminate="true"
+        android:indeterminateTint="#0240f2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/contra"
-        app:layout_constraintTop_toTopOf="@+id/contra"
-        app:layout_constraintVertical_bias="0.454"
-        app:srcCompat="@drawable/novisibility" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline8" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="200dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="365dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="433dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="512dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="589dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="641dp" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/correo"
+        android:layout_width="353dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:ems="10"
+        android:fontFamily="@font/gothammedium"
+        android:hint="@string/emailHint"
+        android:inputType="textWebEmailAddress"
+        android:textColor="#0540f2"
+        app:layout_constraintBottom_toTopOf="@+id/contra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline7"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelTextColor="#FFFFFF"
+        app:met_floatingLabelTextSize="15sp"
+        app:met_primaryColor="#FFFFFF" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/contra"
+        android:layout_width="328dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="29dp"
+        android:background="@drawable/botonsombrainicio"
+        android:ems="10"
+        android:fontFamily="@font/gothammedium"
+        android:hint="@string/contrasenaHint"
+        android:inputType="textPassword"
+        android:textColor="#0540f2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
+        app:layout_constraintEnd_toStartOf="@+id/HidePassIS"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correo"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelTextColor="#03dac6"
+        app:met_floatingLabelTextSize="15sp"
+        app:met_primaryColor="#3cb296"
+        app:passwordToggleEnabled="true" />
 </android.support.constraint.ConstraintLayout>

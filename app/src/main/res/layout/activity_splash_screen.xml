@@ -6,32 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".splashScreen">
 
-    <ImageView
+    <pl.droidsonroids.gif.GifImageView
         android:id="@+id/ImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="1080dp"
+        android:layout_height="1920dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        app:srcCompat="@drawable/placeholder1200"
         android:contentDescription="@string/PlaceHolder"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginStart="12dp"
-        android:text="@string/app_name"
-        android:textAlignment="center"
-        android:textColor="#2D2D2D"
-        android:textSize="36sp"
-        app:fontFamily="sans-serif-thin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/introanim" />
 
 </android.support.constraint.ConstraintLayout>
