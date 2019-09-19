@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".splashScreen">
+    tools:context=".splashScreen"
+    android:background="#2B2B2B">
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/ImageView"
-        android:layout_width="1080dp"
-        android:layout_height="1920dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:contentDescription="@string/PlaceHolder"
