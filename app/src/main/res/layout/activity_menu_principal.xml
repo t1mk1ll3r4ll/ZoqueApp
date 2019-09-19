@@ -11,7 +11,7 @@
         android:id="@+id/imageHeader"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
-        app:srcCompat="@drawable/placeholder1200"
+        app:srcCompat="@drawable/logodreagadoinicio"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

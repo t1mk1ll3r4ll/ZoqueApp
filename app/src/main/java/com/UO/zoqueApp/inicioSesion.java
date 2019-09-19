@@ -200,27 +200,27 @@ public class inicioSesion extends AppCompatActivity {
             barra.setVisibility(View.INVISIBLE);
         }
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        FirebaseAuth fba = FirebaseAuth.getInstance();
+//        FirebaseFirestore db = FirebaseFirestore.getInstance();
+//        FirebaseAuth fba = FirebaseAuth.getInstance();
 
-        int empty=0;
-        Map<String, Object> coins = new HashMap<>();
-
-        coins.put("coin Ammount", empty);
-        coins.put("timestamp", FieldValue.serverTimestamp());
-
-        db.collection("coins").document(fba.getCurrentUser().getUid()).set(coins, SetOptions.merge()).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
-
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getApplicationContext(), "failure", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        int empty=0;
+//        Map<String, Object> coins = new HashMap<>();
+//
+//        coins.put("coin Ammount", empty);
+//        coins.put("timestamp", FieldValue.serverTimestamp());
+//
+//        db.collection("coins").document(fba.getCurrentUser().getUid()).set(coins, SetOptions.merge()).addOnCompleteListener(new OnCompleteListener<Void>() {
+//            @Override
+//            public void onComplete(@NonNull Task<Void> task) {
+//                Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                Toast.makeText(getApplicationContext(), "failure", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
     protected void onStart() {
         super.onStart();
