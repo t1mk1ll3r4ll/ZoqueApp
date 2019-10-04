@@ -56,7 +56,7 @@ public class cursoDescripcion extends AppCompatActivity {
         tvCategory.setText(categoria);
         tvDescription.setText(descripcion);
         img.setImageResource(image);
-        tvreward.setText(reward);
+        tvreward.setText(reward+getEmojiByUnicode(127805));
 
 
         Button btnCurso = findViewById(R.id.botonIrACurso);
@@ -67,6 +67,7 @@ public class cursoDescripcion extends AppCompatActivity {
 
                 DocumentReference dbU =db.collection("coins").document(fba.getCurrentUser().getUid());
                 dbU.update("coin Ammount", FieldValue.increment(Integer.parseInt(reward)));
+                dbU.update("timestamp", FieldValue.serverTimestamp());
 
 
 //                Map<String, Object> coins = new HashMap<>();
@@ -89,5 +90,8 @@ public class cursoDescripcion extends AppCompatActivity {
         });
 
 
+    }
+    public String getEmojiByUnicode(int unicode){
+        return new String(Character.toChars(unicode));
     }
 }

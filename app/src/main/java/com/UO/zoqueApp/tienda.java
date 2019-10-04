@@ -64,13 +64,17 @@ public class tienda extends AppCompatActivity {
                 }
 
                 if (snapshot != null && snapshot.exists()) {
-                    tvElotitos.setText("cantidad de elotitos: " + snapshot.get("coin Ammount"));
+                    tvElotitos.setText(snapshot.get("coin Ammount")+getEmojiByUnicode(127805));
+                    int money = snapshot.getLong("coin Ammount").intValue();
                 } else {
                     Log.d(TAG, "Current data: null");
                 }
             }
         });
 
+    }
+    public String getEmojiByUnicode(int unicode){
+        return new String(Character.toChars(unicode));
     }
 
 }

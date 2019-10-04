@@ -19,7 +19,7 @@
             <ImageView
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="@dimen/_200sdp"
-                android:background="#2d2d2d"
+                android:background="#ffffff"
                 android:id="@+id/courseFoto"
                 android:scaleType="centerCrop"/>
             <TextView

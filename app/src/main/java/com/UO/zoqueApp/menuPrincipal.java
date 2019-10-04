@@ -76,7 +76,7 @@ public class menuPrincipal extends AppCompatActivity {
     }
 
     public void maraton(View view){
-        Intent intent = new Intent(this,maraton.class);
+        Intent intent = new Intent(this,MarathonQuestions.class);
         startActivity(intent);
     }
     public void opciones(View view){
