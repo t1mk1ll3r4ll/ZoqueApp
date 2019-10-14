@@ -68,24 +68,6 @@ public class cursoDescripcion extends AppCompatActivity {
                 DocumentReference dbU =db.collection("coins").document(fba.getCurrentUser().getUid());
                 dbU.update("coin Ammount", FieldValue.increment(Integer.parseInt(reward)));
                 dbU.update("timestamp", FieldValue.serverTimestamp());
-
-
-//                Map<String, Object> coins = new HashMap<>();
-//
-//                    //coins.put("coin Ammount", FieldValue.increment(+coinValue));
-//                    coins.put("timestamp", FieldValue.serverTimestamp());
-//
-//                    db.collection("coins").document(fba.getCurrentUser().getUid()).set(coins).addOnCompleteListener(new OnCompleteListener<Void>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<Void> task) {
-//                            Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
-//                             }
-//                    }).addOnFailureListener(new OnFailureListener() {
-//                        @Override
-//                        public void onFailure(@NonNull Exception e) {
-//                            Toast.makeText(getApplicationContext(), "failure", Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
             }
         });
 

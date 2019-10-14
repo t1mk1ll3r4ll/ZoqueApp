@@ -11,9 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -28,7 +26,6 @@ import java.util.List;
 import java.util.Map;
 
 public class tienda extends AppCompatActivity {
-    int coinValue=0;
     TextView tvElotitos;
     List<Course> lstCourse;
     @Override
@@ -65,7 +62,6 @@ public class tienda extends AppCompatActivity {
 
                 if (snapshot != null && snapshot.exists()) {
                     tvElotitos.setText(snapshot.get("coin Ammount")+getEmojiByUnicode(127805));
-                    int money = snapshot.getLong("coin Ammount").intValue();
                 } else {
                     Log.d(TAG, "Current data: null");
                 }

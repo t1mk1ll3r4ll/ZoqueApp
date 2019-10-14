@@ -35,7 +35,8 @@ public class menuPrincipal extends AppCompatActivity {
 
     List<Course> lstCourse;
     int coins;
-
+    FirebaseAuth fba= FirebaseAuth.getInstance();
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +74,40 @@ public class menuPrincipal extends AppCompatActivity {
                 }
             }
         });
+
+        final DocumentReference docRef = db.collection("coins").document(fba.getCurrentUser().getUid());
+        docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot snapshot,
+                                @Nullable FirebaseFirestoreException e) {
+                if (e != null) {
+                    return;
+                }
+                if (snapshot != null && snapshot.exists()) {
+
+
+
+
+                }
+                else {
+                    Map<String, Object> coins = new HashMap<>();
+
+                    coins.put("coin Ammount", FieldValue.increment(0));
+                    coins.put("timestamp", FieldValue.serverTimestamp());
+
+                    db.collection("coins").document(fba.getCurrentUser().getUid()).set(coins).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                        }
+                    });
+                }
+
+            }
+        });
     }
 
     public void maraton(View view){
@@ -87,5 +122,6 @@ public class menuPrincipal extends AppCompatActivity {
         Intent intent = new Intent(this,tienda.class);
         startActivity(intent);
     }
+
 
 }

@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".MarathonQuestions"></activity>
+        <activity android:name=".discount"></activity>
+        <activity android:name=".MarathonQuestions" />
         <activity
             android:name=".storeConfirm"
             android:configChanges="orientation"

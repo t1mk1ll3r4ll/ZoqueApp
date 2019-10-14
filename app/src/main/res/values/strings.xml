@@ -42,8 +42,8 @@
     <array name="all_questions">
         <item>¿como se dice mama en ingles?;mua;dad;*Mom;must</item>
         <item>¿comos se dice papa en ingles? ;dude;*Dad;mom;father</item>
-        <item>¿como se dice padre en ingles?;Dad;Mom;*Father;Mother </item>
-        <item>¿como se dice madre en ingles?;Dad;Mom;father;*Mother </item>
+        <item>¿como se dice padre en ingles?;Dad;Mom;*Father;Mother</item>
+        <item>¿como se dice madre en ingles?;Dad;Mom;father;*Mother</item>
     </array>
 
 

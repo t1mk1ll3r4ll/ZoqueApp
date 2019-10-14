@@ -78,7 +78,13 @@ public class storeConfirm extends AppCompatActivity {
 
                         if (snapshot != null && snapshot.exists()) {
                              money = snapshot.getLong("coin Ammount").intValue();
-                              cost= Integer.parseInt(reward);
+                            cost= Integer.parseInt(reward);
+                             if(money>=cost){
+                                 Intent intent = new Intent (getApplicationContext(), discount.class);
+                                 intent.putExtra("costo",reward);
+                                 startActivity(intent);
+                             }
+
 
 
                         } else {
