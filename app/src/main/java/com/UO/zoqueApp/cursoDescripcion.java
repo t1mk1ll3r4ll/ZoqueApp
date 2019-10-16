@@ -42,10 +42,11 @@ public class cursoDescripcion extends AppCompatActivity {
 
 
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
 
 
-        String titulo, categoria, descripcion;
+        final String titulo;
+        String categoria, descripcion;
         titulo= intent.getExtras().getString("titulo");
         categoria= intent.getExtras().getString("categoria");
         descripcion= intent.getExtras().getString("descripcion");
@@ -64,6 +65,18 @@ public class cursoDescripcion extends AppCompatActivity {
         btnCurso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if(titulo.equals("Numeros")){
+                    Intent intent = new Intent (getApplicationContext(), Numeros.class);
+                    startActivity(intent);
+                }
+                else if (titulo.equals("Expresiones")){
+                    Intent intent = new Intent (getApplicationContext(), Expresiones.class);
+                    startActivity(intent);
+                }
+                else if(titulo.equals("")){
+
+                }
 
                 DocumentReference dbU =db.collection("coins").document(fba.getCurrentUser().getUid());
                 dbU.update("coin Ammount", FieldValue.increment(Integer.parseInt(reward)));
