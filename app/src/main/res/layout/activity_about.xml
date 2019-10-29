@@ -68,34 +68,91 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.95" />
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline44"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gothamlight"
+        android:gravity="center"
+        android:text="Desarrollado por @T1MK1LL3R4LL - @vampiarts \n\t Universiadd de Oriente Coatzacoalcos"
+        app:layout_constraintBottom_toTopOf="@+id/guideline43"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline42">
-
-    </android.support.constraint.ConstraintLayout>
+        app:layout_constraintTop_toTopOf="@+id/guideline44" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline44"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.900637" />
+        app:layout_constraintGuide_percent="0.9" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline45"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Desarrollado por @T1MK1LL3R4LL - @vampiarts \n\t Universiadd de Oriente Coatzacoalcos"
-        android:gravity="center"
-        android:fontFamily="@font/gothamlight"
-        app:layout_constraintBottom_toTopOf="@+id/guideline43"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <Button
+        android:id="@+id/quees"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:background="@drawable/botonclean"
+        android:fontFamily="@font/gothammedium"
+
+        android:onClick="quees"
+
+        android:text="¿Que es zoque?"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/_10sdp"
+
+        app:layout_constraintBottom_toTopOf="@+id/objetivos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline44" />
+        app:layout_constraintTop_toTopOf="@+id/guideline45" />
+
+    <Button
+        android:id="@+id/objetivos"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:background="@drawable/botonclean"
+        android:fontFamily="@font/gothammedium"
+
+        android:onClick="objetivos"
+
+        android:text="Objetivos"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/_10sdp"
+
+        app:layout_constraintBottom_toTopOf="@+id/mision"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quees" />
+
+    <Button
+        android:id="@+id/mision"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:background="@drawable/botonclean"
+        android:fontFamily="@font/gothammedium"
+
+        android:onClick="misionvision"
+
+        android:text="Misión/visión"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/_10sdp"
+
+        app:layout_constraintBottom_toTopOf="@+id/guideline46"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/objetivos" />
+
 </android.support.constraint.ConstraintLayout>

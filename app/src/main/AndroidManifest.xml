@@ -16,7 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".about"></activity>
+        <activity android:name=".Sabiasque"></activity>
+        <activity android:name=".mision" />
+        <activity android:name=".objetivos" />
+        <activity android:name=".quees" />
+        <activity android:name=".about" />
         <activity android:name=".Expresiones" />
         <activity android:name=".Numeros" />
         <activity android:name=".discount" />

@@ -33,7 +33,7 @@ public class splashScreen extends AppCompatActivity {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Intent intent = new Intent(splashScreen.this, menuPrincipal.class);
+                    Intent intent = new Intent(splashScreen.this, Sabiasque.class);
                     startActivity(intent);
                     finish();
                 }
