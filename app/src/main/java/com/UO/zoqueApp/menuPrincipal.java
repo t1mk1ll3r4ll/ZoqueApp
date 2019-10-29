@@ -122,6 +122,10 @@ public class menuPrincipal extends AppCompatActivity {
         Intent intent = new Intent(this,tienda.class);
         startActivity(intent);
     }
+    public void about(View view){
+        Intent intent = new Intent(this,about.class);
+        startActivity(intent);
+    }
 
 
 }

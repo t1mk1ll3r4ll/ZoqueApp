@@ -51,6 +51,16 @@
         <com.github.clans.fab.FloatingActionButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:src="@drawable/aboutus"
+            app:fab_label="Acerca De"
+            android:onClick="about"
+            app:fab_colorNormal="#0540f2"
+            app:fab_colorPressed="#051A59"
+            app:fab_colorRipple="#051A59"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:src="@drawable/settings"
             app:fab_label="opciones"
             android:onClick="opciones"
@@ -75,6 +85,7 @@
             app:fab_colorNormal="#0540f2"
             app:fab_colorPressed="#051A59"
             app:fab_colorRipple="#051A59"/>
+
     </com.github.clans.fab.FloatingActionMenu>
 
 </android.support.constraint.ConstraintLayout>

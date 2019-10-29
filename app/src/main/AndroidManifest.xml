@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".Expresiones"></activity>
+        <activity android:name=".about"></activity>
+        <activity android:name=".Expresiones" />
         <activity android:name=".Numeros" />
         <activity android:name=".discount" />
         <activity android:name=".MarathonQuestions" />
