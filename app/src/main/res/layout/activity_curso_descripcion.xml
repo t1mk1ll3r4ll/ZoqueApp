@@ -42,7 +42,7 @@
                 android:fontFamily="@font/gothammedium"
                 android:textColor="#2d2d2d"
                 android:padding="@dimen/_8sdp"
-                android:background="#edecec"
+
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -64,13 +64,19 @@
                 android:fontFamily="@font/gothammedium"
                 android:textColor="#2d2d2d"
                 />
+
             <Button
                 android:id="@+id/botonIrACurso"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/goTo"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginTop="@dimen/_150sdp"
+                android:background="@drawable/botonclean"
+                android:fontFamily="@font/gothammedium"
                 android:padding="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_150sdp"/>
+                android:text="@string/goTo"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/_15sdp" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 

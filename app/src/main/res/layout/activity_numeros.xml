@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/gothamregular"
         android:text="popoluca"
-        android:textSize="@dimen/_15sdp"
+        android:textSize="@dimen/_25sdp"
         app:layout_constraintBottom_toTopOf="@+id/guideline32"
         app:layout_constraintEnd_toStartOf="@+id/guideline26"
         app:layout_constraintStart_toStartOf="@+id/guideline18"
@@ -91,7 +91,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/gothammedium"
         android:text="español"
-        android:textSize="@dimen/_15sdp"
+        android:textSize="@dimen/_20sdp"
         app:layout_constraintBottom_toTopOf="@+id/guideline33"
         app:layout_constraintEnd_toStartOf="@+id/guideline26"
         app:layout_constraintStart_toStartOf="@+id/guideline18"
@@ -119,10 +119,10 @@
         android:id="@+id/buttonBck"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/botonclean"
         android:fontFamily="@font/gothammedium"
         android:text="Anterior"
@@ -138,14 +138,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="204dp" />
+        app:layout_constraintGuide_end="181dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="229dp" />
+        app:layout_constraintGuide_end="225dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline34"
@@ -196,7 +196,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="252dp" />
+        app:layout_constraintGuide_end="262dp" />
+
+    <ImageView
+        android:id="@+id/slow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toTopOf="@+id/guideline68"
+        app:layout_constraintEnd_toStartOf="@+id/guideline26"
+        app:layout_constraintStart_toStartOf="@+id/guideline18"
+        app:layout_constraintTop_toTopOf="@+id/guideline30"
+        app:srcCompat="@drawable/slow" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline68"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="312dp" />
+
+    <Button
+        android:id="@+id/nextact"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/botonclean"
+        android:fontFamily="@font/gothammedium"
+        android:text="Siguiente Actividad"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/guideline38"
+        app:layout_constraintEnd_toStartOf="@+id/guideline26"
+        app:layout_constraintStart_toStartOf="@+id/guideline35"
+        app:layout_constraintTop_toTopOf="@+id/guideline34" />
 
 
 </android.support.constraint.ConstraintLayout>
