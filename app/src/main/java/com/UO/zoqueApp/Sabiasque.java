@@ -22,7 +22,7 @@ public class Sabiasque extends AppCompatActivity {
         double x = (Math.random()*((11-0)+1))+0;
 
         int index=(int)x;
-
+//añadir comprobacion de index
         sabiasque.setText(dyk[index]);
         new Handler().postDelayed(new Runnable() {
             @Override
