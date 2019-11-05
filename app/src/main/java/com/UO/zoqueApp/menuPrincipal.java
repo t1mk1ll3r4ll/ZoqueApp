@@ -50,11 +50,7 @@ public class menuPrincipal extends AppCompatActivity {
         lstCourse.add(new Course("Numeros", "Categoria: numeros", "Descrición: Los numeros del 1 al 10", R.drawable.cursouno, "10"));
         lstCourse.add(new Course("Expresiones", "Categoria: Relaciones ", "descricion: expresioens de comunicación", R.drawable.cursodos , "20"));
         lstCourse.add(new Course("trabajo en equipo", "categoria: relaciones personales", "descricion: como trabajar en equipo", R.drawable.cursotres, "30"));
-        lstCourse.add(new Course("networking computadoras", "categoria: topologia de red", "descricion: curso sobre topologias", R.drawable.cursocuatro, "40"));
-        lstCourse.add(new Course("training", "categoria: entrenamiento personal", "descricion: curso sobre la salud", R.drawable.cursocinco, "50"));
-        lstCourse.add(new Course("traduccion", "categoria: lenguas", "descricion: curso sobre traduccion dah!", R.drawable.cursoseis, "60"));
-        lstCourse.add(new Course("conversacion", "categoria: lenguas", "descricion: curso sobre conversaciones en otro idioma dah!", R.drawable.cursosiete,"70"));
-        lstCourse.add(new Course("aprende a programar!", "categoria: IT", "descricion: curso basico de programacion", R.drawable.cursoocho,"80"));
+        
 
         rv.setLayoutManager(new GridLayoutManager(this, 2));
         rv.setAdapter(myAdapter);

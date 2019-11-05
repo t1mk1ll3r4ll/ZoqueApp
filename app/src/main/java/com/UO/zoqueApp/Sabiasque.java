@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 public class Sabiasque extends AppCompatActivity {
     TextView sabiasque;
+    int index;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,10 +20,15 @@ public class Sabiasque extends AppCompatActivity {
                 "sierra, siendo está ultima la que estamos estudiando.","El popoluca de la sierra no es una lengua que esté en riesgo de desaparición,\n" +
                 "hablando por el número de personas que aún hablan esta lengua."};
         sabiasque = findViewById(R.id.sabias_que_text);
-        double x = (Math.random()*((11-0)+1))+0;
+        double x = (Math.random()*((10)+1))+0;
+        index=(int)x;
 
-        int index=(int)x;
-//añadir comprobacion de index
+        if(index>10){
+        index--;
+        }
+        if(index<0){
+            index++;
+        }
         sabiasque.setText(dyk[index]);
         new Handler().postDelayed(new Runnable() {
             @Override
