@@ -67,16 +67,16 @@
 
             <Button
                 android:id="@+id/botonIrACurso"
-                android:layout_width="@dimen/_150sdp"
-                android:layout_height="@dimen/_45sdp"
+                android:layout_width="@dimen/_136sdp"
+                android:layout_height="@dimen/_30sdp"
                 android:layout_marginTop="@dimen/_150sdp"
                 android:background="@drawable/botonclean"
                 android:fontFamily="@font/gothammedium"
-                android:padding="@dimen/_15sdp"
                 android:text="@string/goTo"
+
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
-                android:textSize="@dimen/_15sdp" />
+                android:textSize="@dimen/_13sdp" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
