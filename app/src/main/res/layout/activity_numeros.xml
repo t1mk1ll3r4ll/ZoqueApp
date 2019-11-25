@@ -227,7 +227,7 @@
         android:layout_marginBottom="5dp"
         android:background="@drawable/botonclean"
         android:fontFamily="@font/gothammedium"
-        android:text="Siguiente Actividad"
+        android:text="Realizar Actividad"
         android:textAlignment="center"
         android:textColor="#ffffff"
         android:visibility="invisible"

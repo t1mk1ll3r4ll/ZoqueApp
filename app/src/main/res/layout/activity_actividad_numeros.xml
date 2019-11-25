@@ -24,23 +24,31 @@
         android:id="@+id/respuesta1"
         android:layout_width="257dp"
         android:layout_height="134dp"
-        android:background="#FF5722"
         android:fontFamily="@font/gothammedium"
         android:text="1"
+        android:onClick="correcto"
+        android:background="#157ffb"
+        android:textColor="#ffffff"
         android:textSize="@dimen/_35sdp"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="213dp" />
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintEnd_toStartOf="@+id/guideline69"
+        app:layout_constraintStart_toStartOf="@+id/guideline69"
+        app:layout_constraintTop_toTopOf="@+id/guideline73" />
 
     <Button
         android:id="@+id/respuesat2"
         android:layout_width="259dp"
         android:layout_height="143dp"
-        android:background="#03A9F4"
         android:fontFamily="@font/gothammedium"
         android:text="3"
+        android:onClick="incorrecto"
+        android:background="#157ffb"
+        android:textColor="#ffffff"
         android:textSize="@dimen/_35sdp"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="388dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline69"
+        app:layout_constraintStart_toStartOf="@+id/guideline69"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <TextView
         android:id="@+id/textView8"
@@ -52,8 +60,10 @@
         android:text="TUUM"
         android:textColor="#000000"
         android:textSize="@dimen/_25sdp"
-        tools:layout_editor_absoluteX="156dp"
-        tools:layout_editor_absoluteY="107dp" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline67"
+        app:layout_constraintEnd_toStartOf="@+id/guideline69"
+        app:layout_constraintStart_toStartOf="@+id/guideline69"
+        app:layout_constraintTop_toTopOf="@+id/guideline67" />
 
     <TextView
         android:id="@+id/textView9"
@@ -82,6 +92,27 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="70dp" />
+
+    <ImageView
+    android:id="@+id/correcto"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:visibility="invisible"
+    app:layout_constraintBottom_toTopOf="@+id/guideline67"
+    app:layout_constraintEnd_toStartOf="@+id/guideline69"
+    app:layout_constraintStart_toStartOf="@+id/guideline69"
+    app:layout_constraintTop_toTopOf="@+id/guideline67"
+    app:srcCompat="@drawable/correcto" />
+    <ImageView
+        android:id="@+id/incorrecto"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/guideline67"
+        app:layout_constraintEnd_toStartOf="@+id/guideline69"
+        app:layout_constraintStart_toStartOf="@+id/guideline69"
+        app:layout_constraintTop_toTopOf="@+id/guideline67"
+        app:srcCompat="@drawable/incorrecto" />
 
 
 </android.support.constraint.ConstraintLayout>

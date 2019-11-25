@@ -47,9 +47,9 @@ public class menuPrincipal extends AppCompatActivity {
         lstCourse = new ArrayList<>();
         reciclerViewAdapter myAdapter = new reciclerViewAdapter(this, lstCourse);
 
-        lstCourse.add(new Course("Numeros", "Categoria: numeros", "Descrición: Los numeros del 1 al 10", R.drawable.cursouno, "10"));
-        lstCourse.add(new Course("Expresiones", "Categoria: Relaciones ", "descricion: expresioens de comunicación", R.drawable.cursodos , "20"));
-        lstCourse.add(new Course("trabajo en equipo", "categoria: relaciones personales", "descricion: como trabajar en equipo", R.drawable.cursotres, "30"));
+        lstCourse.add(new Course("Numeros", "Categoria: Numeros", "Descripción: Los numeros del 1 al 10", R.drawable.cursouno, "10"));
+        lstCourse.add(new Course("Expresiones", "Categoria: Relaciones ", "descripcion: expresioens de comunicación", R.drawable.cursodos , "20"));
+        lstCourse.add(new Course("trabajo en equipo", "categoria: relaciones personales", "descripcion: como trabajar en equipo", R.drawable.cursotres, "30"));
         
 
         rv.setLayoutManager(new GridLayoutManager(this, 2));
