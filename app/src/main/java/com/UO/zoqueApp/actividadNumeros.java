@@ -38,7 +38,7 @@ public class actividadNumeros extends AppCompatActivity {
     }
 
     public void incorrecto(View view) {
-
+        index++;
         correcto.setVisibility(View.INVISIBLE);
         incorrecto.setVisibility(View.INVISIBLE);
         Nombre.setVisibility(View.INVISIBLE);
@@ -52,14 +52,23 @@ public class actividadNumeros extends AppCompatActivity {
                 IncorrectoImg.setVisibility(View.INVISIBLE);
             }
         }, 1000);
-        index++;
+
         correcto.setText(numerocorrecto[index]);
         incorrecto.setText(numerosincorrectos[index]);
         Nombre.setText(numerocorrectoletra[index]);
 
+        if (index==9){
+            Intent intent = new Intent (getApplicationContext(), correctasNumeros.class);
+            intent.putExtra("score",correctas);
+            startActivity(intent);
+            finish();
+        }
+
 
     }
     public void correcto (View view){
+        index++;
+        correctas++;
         correcto.setVisibility(View.INVISIBLE);
         incorrecto.setVisibility(View.INVISIBLE);
         Nombre.setVisibility(View.INVISIBLE);
@@ -74,11 +83,17 @@ public class actividadNumeros extends AppCompatActivity {
             }
         }, 1000);
 
-        index++;
-        correctas++;
+
         correcto.setText(numerocorrecto[index]);
         incorrecto.setText(numerosincorrectos[index]);
         Nombre.setText(numerocorrectoletra[index]);
+
+        if (index==9){
+            Intent intent = new Intent (getApplicationContext(), correctasNumeros.class);
+            intent.putExtra("score",correctas);
+            startActivity(intent);
+            finish();
+        }
     }
 
 }
